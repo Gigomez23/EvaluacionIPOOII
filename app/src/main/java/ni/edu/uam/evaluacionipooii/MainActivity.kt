@@ -35,7 +35,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBarDefaults
-//import androidx.compose.material3.ExposedDropdownMenu
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
@@ -114,12 +113,12 @@ fun PantallaControlAsistencia() {
                 onValueChange = { nombreEstudiante = it },
                 modifier = Modifier.fillMaxWidth(),
                 label = { Text("Nombre del estudiante") },
-//                leadingIcon = {
-//                    Icon(
-//                        imageVector = Icons.Default.Person,
-//                        contentDescription = "Ícono de estudiante"
-//                    )
-//                },
+                leadingIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Person,
+                        contentDescription = "Ícono de estudiante"
+                    )
+                },
                 singleLine = true,
                 colors = TextFieldDefaults.colors()
             )
@@ -233,11 +232,11 @@ fun PantallaControlAsistencia() {
 @Composable
 fun TarjetaRegistro(registro: RegistroAsistencia) {
 
-//    val icono = when (registro.estado) {
-//        "Presente" -> Icons.Default.CheckCircle
-//        "Ausente" -> Icons.Default.Warning
-//        else -> Icons.Default.Schedule
-//    }
+    val icono = when (registro.estado) {
+        "Presente" -> Icons.Default.CheckCircle
+        "Ausente" -> Icons.Default.Warning
+        else -> Icons.Default.Schedule
+    }
 
     val textoSecundario = when (registro.estado) {
         "Presente" -> "Asistió a clases"
@@ -259,11 +258,11 @@ fun TarjetaRegistro(registro: RegistroAsistencia) {
             androidx.compose.foundation.layout.Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
-//                Icon(
-//                    imageVector = icono,
-//                    contentDescription = "Estado de asistencia",
-//                    tint = MaterialTheme.colorScheme.primary
-//                )
+                Icon(
+                    imageVector = icono,
+                    contentDescription = "Estado de asistencia",
+                    tint = MaterialTheme.colorScheme.primary
+                )
 
                 androidx.compose.foundation.layout.Spacer(modifier = Modifier.padding(6.dp))
 
